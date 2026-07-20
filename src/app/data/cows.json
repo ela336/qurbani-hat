@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Deshi Shahi Cow",
+    "type": "Cow",
+    "breed": "Local Deshi",
+    "price": 120000,
+    "weight": 280,
+    "age": 3,
+    "location": "Bogura",
+    "description": "Healthy deshi cow suitable for Qurbani. Well fed with natural food.",
+    "image": "/assets/deshi-shahi.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 2,
+    "name": "Sahiwal Premium Cow",
+    "type": "Cow",
+    "breed": "Sahiwal",
+    "price": 185000,
+    "weight": 420,
+    "age": 4,
+    "location": "Rajshahi",
+    "description": "Strong and healthy Sahiwal cow raised with organic feed.",
+    "image": "/assets/shahiwal.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 3,
+    "name": "Black Bengal Goat",
+    "type": "Goat",
+    "breed": "Black Bengal",
+    "price": 28000,
+    "weight": 38,
+    "age": 2,
+    "location": "Kushtia",
+    "description": "Healthy Black Bengal goat, perfect for family Qurbani.",
+    "image": "/assets/black-bengla-goat.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 4,
+    "name": "Jamunapari Goat",
+    "type": "Goat",
+    "breed": "Jamunapari",
+    "price": 42000,
+    "weight": 55,
+    "age": 3,
+    "location": "Mymensingh",
+    "description": "Large Jamunapari goat with excellent health and weight.",
+    "image": "/assets/jamunapuri.jpg",
+    "category": "Small Animal"
+  },
+  {
+    "id": 5,
+    "name": "Friesian Cross Bull",
+    "type": "Bull",
+    "breed": "Friesian Cross",
+    "price": 250000,
+    "weight": 650,
+    "age": 5,
+    "location": "Sirajganj",
+    "description": "Massive Friesian cross bull, ideal for large Qurbani.",
+    "image": "/assets/crossbull.jpg",
+    "category": "Large Animal"
+  },
+  {
+    "id": 6,
+    "name": "Garol Sheep",
+    "type": "Sheep",
+    "breed": "Garol",
+    "price": 35000,
+    "weight": 48,
+    "age": 2,
+    "location": "Khulna",
+    "description": "Healthy Garol sheep with excellent meat quality.",
+    "image": "/assets/sheep.jpg",
+    "category": "Small Animal"
+  }
+]

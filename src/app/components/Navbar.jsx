@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/assets/logo.png"; 
+ 
 import {usePathname} from "next/navigation";
 
 const Navbar = () => {
   const pathname=usePathname();
   
   return (
-    <div className="bg-white text-[#184B2D] shadow-md">
+    <div className="bg-white text-[#184B2D] shadow-md border border-4 w-full border-[#184B2D]">
       <div className="navbar max-w-7xl mx-auto px-4">
 
         
@@ -34,7 +34,7 @@ const Navbar = () => {
           
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src={logo}
+              src="/assets/logo.png"
               alt="Qurbani Hat"
               width={150}
               height={150}
