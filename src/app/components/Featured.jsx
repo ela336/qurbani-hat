@@ -12,7 +12,7 @@ const Featured = () => {
   return (
     <section className="py-20 bg-base-100">
       <div className="max-w-7xl mx-auto px-5">
-        {/* Heading */}
+        
         <div className="text-center mb-14">
           <h2 className="text-4xl font-bold text-[#15713b]">
             Featured Animals
