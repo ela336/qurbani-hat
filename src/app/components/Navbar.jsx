@@ -3,9 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
  
 import {usePathname} from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
   const pathname=usePathname();
+  const { data: session,isPending } = authClient.useSession();
+  const user=session?.user;
   
   return (
     <div className="bg-white text-[#184B2D] shadow-md border border-4 w-full border-[#184B2D]">
@@ -54,15 +57,27 @@ const Navbar = () => {
           </ul>
         </div>
 
-        
-        <div className="navbar-end gap-2">
-          <button className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">
+        {isPending?<span className="loading loading-spinner loading-xl mx-65"></span>: user?
+         ( <div className="navbar-end gap-2">
+          <p>{user.name}</p>
+          image
+          <Link href="/register" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6" 
+          onClick={async()=>await authClient.signOut()}
+          >
+            logout
+          </Link>
+        </div>):
+        ( <div className="navbar-end gap-2">
+          
+          <Link href="/login" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">
             Login
-          </button>
-          <button className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">
+          </Link>
+          <Link href="/register" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">
             Register
-          </button>
-        </div>
+          </Link>
+        </div>)
+        }
+       
 
       </div>
     </div>
