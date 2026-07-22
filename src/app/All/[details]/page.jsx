@@ -1,5 +1,7 @@
 import Image from "next/image";
 import cows from "../../data/cows.json";
+import BookingForm from "./Bookingform";
+import { notFound } from "next/navigation";
 
 const Details = async ({ params }) => {
   const { details } = await params;
@@ -8,13 +10,7 @@ const Details = async ({ params }) => {
   const cow = cows.find((cow) => cow.id === parseInt(details));
 
   if (!cow) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <h2 className="text-3xl font-bold text-red-500">
-          Animal Not Found
-        </h2>
-      </div>
-    );
+     notFound();
   }
 
   return (
@@ -61,28 +57,28 @@ const Details = async ({ params }) => {
           <div className="grid grid-cols-2 gap-5">
             <div className="bg-green-50 rounded-xl p-4">
               <p className="text-gray-500">Price</p>
-              <h3 className="text-2xl font-bold text-green-700">
+              <h3 className="text-sm sm:text-2xl font-bold text-green-700">
                 ৳ {cow.price.toLocaleString()}
               </h3>
             </div>
 
             <div className="bg-green-50 rounded-xl p-4">
               <p className="text-gray-500">Weight</p>
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-sm sm:text-2xl font-bold">
                 {cow.weight} kg
               </h3>
             </div>
 
             <div className="bg-green-50 rounded-xl p-4">
               <p className="text-gray-500">Age</p>
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-sm sm:text-2xl font-bold">
                 {cow.age} Years
               </h3>
             </div>
 
             <div className="bg-green-50 rounded-xl p-4">
               <p className="text-gray-500">Location</p>
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-sm sm:text-2xl font-bold">
                 {cow.location}
               </h3>
             </div>
@@ -98,11 +94,13 @@ const Details = async ({ params }) => {
             </p>
           </div>
 
-          <button className="btn btn-success btn-lg mt-10 w-full">
-            Contact Seller
-          </button>
+          
         </div>
+        
       </div>
+      <div className="mt-10">
+    <BookingForm></BookingForm>
+     </div>
     </section>
   );
 };

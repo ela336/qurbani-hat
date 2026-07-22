@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
  
 import {usePathname} from "next/navigation";
 import { authClient } from "@/lib/auth-client";
@@ -9,6 +11,16 @@ const Navbar = () => {
   const pathname=usePathname();
   const { data: session,isPending } = authClient.useSession();
   const user=session?.user;
+  const router = useRouter();
+  const handleLogout = async () => {
+  await authClient.signOut({
+  fetchOptions: {
+    onSuccess: () => {
+      router.push("/login");
+    },
+  },
+});
+};
   
   return (
     <div className="bg-white text-[#184B2D] shadow-md border border-4 w-full border-[#184B2D]">
@@ -58,15 +70,53 @@ const Navbar = () => {
         </div>
 
         {isPending?<span className="loading loading-spinner loading-xl mx-65"></span>: user?
-         ( <div className="navbar-end gap-2">
-          <p>{user.name}</p>
-          image
-          <Link href="/register" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6" 
-          onClick={async()=>await authClient.signOut()}
-          >
-            logout
-          </Link>
-        </div>):
+         ( 
+          <div className="navbar-end  gap-0 sm:gap-4">
+  <p className="hidden sm:block text-base font-semibold text-green-700">
+  Hi, <span className="font-bold text-gray-800">{user.name}</span>
+</p>
+
+  <div className="dropdown dropdown-end">
+    <label
+      tabIndex={0}
+      className="btn btn-ghost h-auto px-3 py-2 rounded-xl hover:bg-green-50"
+    >
+      <div className="flex items-center gap-3">
+        <div className="w-11 rounded-full overflow-hidden ring ring-green-500 ring-offset-2">
+          <Image
+            src="/assets/avater.jpg"
+            alt="User Avatar"
+            width={44}
+            height={44}
+          />
+        </div>
+
+        <div className="text-left hidden md:block">
+          <p className="text-sm font-semibold text-gray-800">My Profile</p>
+          <p className="text-xs text-gray-500">Account ▼</p>
+        </div>
+      </div>
+    </label>
+
+    <ul className="menu menu-sm dropdown-content mt-3 z-[1] w-56 rounded-2xl bg-white shadow-2xl border border-gray-100 p-2">
+      <li>
+        <Link href="/profile" className="font-medium">
+          👤 My Profile
+        </Link>
+      </li>
+
+      <li>
+        <button
+  onClick={handleLogout}
+  className="text-red-600 font-medium hover:bg-red-50"
+>
+  🚪 Logout
+</button>
+      </li>
+    </ul>
+  </div>
+</div>
+         ):
         ( <div className="navbar-end gap-2">
           
           <Link href="/login" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">

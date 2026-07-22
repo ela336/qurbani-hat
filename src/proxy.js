@@ -8,8 +8,8 @@ export async function proxy(request) {
         headers:await headers(),
     })
 
-    const isloggedin=true;
-    if(isloggedin){
+    
+    if(session){
         return  NextResponse.next();
     }
     else{

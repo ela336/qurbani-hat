@@ -9,13 +9,13 @@ const Banner = () => {
 
         
         <div className="flex-1">
-          <Image
+          <Image 
             src="/assets/heroimg.jpg"
             alt="Qurbani Cow"
             width={650}
             height={500}
             priority
-            className="rounded-2xl shadow-2xl object-cover"
+            className="rounded-2xl shadow-2xl object-cover w-full"
           />
         </div>
 
@@ -39,7 +39,7 @@ const Banner = () => {
 
           <div className="mx-auto">
             <Link href="/All">
-              <button className="btn bg-white text-[#184B2D] text-xl w-100 h-13 border border-4 border-[#184B2D]  ml-20 shadow-2xl">
+              <button className="btn bg-white text-[#184B2D] text-sm sm:text-xl w-35 sm:w-100 h-13 border border-4 border-[#184B2D]  ml-20 shadow-2xl">
                 All Animals
               </button>
             </Link>

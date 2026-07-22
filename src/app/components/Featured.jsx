@@ -27,13 +27,13 @@ const Featured = () => {
       
        
 
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-6">
           {cows.filter((animal)=>animal.id<5).map((animal) => (
-            <div
+            <div 
               key={animal.id}
-              className="card bg-base-100 shadow-xxl hover:shadow-2xl transition duration-300"
+              className="card bg-base-100  border border-2 border-green-700 shadow-xxl hover:shadow-2xl transition duration-300"
             >
-              <Image
+              <Image className="w-full"
               src={animal.image}
               alt={animal.name}
               width={400}
@@ -54,18 +54,9 @@ const Featured = () => {
                   {animal.location}
                 </p>
 
-                <h3 className="text-2xl font-bold text-green-600">
-                  {animal.price}
-                </h3>
+               
 
-                <div className="card-actions ">
-                  <Link
-                    href={`/animals/${animal.id}`}
-                    className="btn btn-success w-full"
-                  >
-                    View Details
-                  </Link>
-                </div>
+               
               </div>
             </div>
           ))}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
+ import { useRouter } from "next/navigation";
 
 const Register = () => {
   const handlegooglesignup=async()=>{
@@ -14,9 +15,11 @@ const Register = () => {
    const {
       register,
       handleSubmit,
+       reset,
       
       formState: { errors },
     } = useForm();
+    const router = useRouter();
 
     const onSub = async(data) =>{
        console.log(data);
@@ -37,6 +40,9 @@ if(error)
 if(res)
 {
   alert("Signup Successfull");
+  reset(); 
+
+    router.push("/login"); 
 }
 
     };
