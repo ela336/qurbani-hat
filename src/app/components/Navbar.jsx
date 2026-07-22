@@ -27,47 +27,100 @@ const Navbar = () => {
       <div className="navbar max-w-7xl mx-auto px-4">
 
         
-        <div className="navbar-start">
+       <div className="navbar-start">
+  
+  <div className="dropdown md:hidden">
+    <label tabIndex={0} className="btn btn-ghost btn-circle">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </label>
 
-          
-          <div className="dropdown lg:hidden">
-            
+    <ul
+      tabIndex={0}
+      className="menu menu-sm dropdown-content mt-3 z-50 w-52 rounded-xl bg-white shadow-lg"
+    >
+      <li>
+        <Link
+          href="/"
+          className={
+            pathname === "/"
+              ? "bg-[#184B2D] text-white"
+              : "text-[#184B2D]"
+          }
+        >
+          Home
+        </Link>
+      </li>
 
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 w-52 rounded-box bg-white text-black shadow z-50"
-            >
-              <li className="text-[#184B2D] font-bold">
-                <Link href="/" className={pathname==='/' ? " bg-[#F4A62A] text-white" : ""}>Home</Link>
-              </li>
-              <li className="text-[#184B2D] font-bold">
-                <Link href="/all-animals" className={pathname==="/all-animals" ? "bg-[#F4A62A] text-white" : ""}>All Animals</Link>
-              </li>
-            </ul>
-          </div>
+      <li>
+        <Link
+          href="/All"
+          className={
+            pathname === "/All"
+              ? "bg-[#184B2D] text-white"
+              : "text-[#184B2D]"
+          }
+        >
+          All Animals
+        </Link>
+      </li>
+    </ul>
+  </div>
 
-          
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/assets/logo.png"
-              alt="Qurbani Hat"
-              width={150}
-              height={150}
-            />
-          </Link>
-        </div>
+  {/* Logo */}
+  <Link href="/" className="ml-2 md:ml-0">
+    <Image
+      src="/assets/logo.png"
+      alt="Qurbani Hat"
+      width={150}
+      height={150}
+      className="w-24 sm:w-28 md:w-32 lg:w-36 h-auto"
+    />
+  </Link>
+</div>
 
-        
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-4 text-base font-medium">
-            <li className="text-[#184B2D] text-[20px] font-normal">
-              <Link href="/" className={pathname==='/' ? " bg-[#184B2D] text-white" : ""}>Home</Link>
-            </li>
-            <li className="text-[#184B2D] text-[20px] font-normal">
-              <Link href="/All" className={pathname==="/All" ? "bg-[#184B2D] text-white" : ""}>All Animals</Link>
-            </li>
-          </ul>
-        </div>
+{/* Desktop Menu */}
+<div className="navbar-center hidden md:flex">
+  <ul className="menu menu-horizontal gap-2 lg:gap-4">
+    <li>
+      <Link
+        href="/"
+        className={`rounded-lg px-4 py-2 text-base lg:text-lg ${
+          pathname === "/"
+            ? "bg-[#184B2D] text-white"
+            : "text-[#184B2D]"
+        }`}
+      >
+        Home
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        href="/All"
+        className={`rounded-lg px-4 py-2 text-base lg:text-lg ${
+          pathname === "/All"
+            ? "bg-[#184B2D] text-white"
+            : "text-[#184B2D]"
+        }`}
+      >
+        All Animals
+      </Link>
+    </li>
+  </ul>
+</div>
 
         {isPending?<span className="loading loading-spinner loading-xl mx-65"></span>: user?
          ( 
@@ -117,15 +170,21 @@ const Navbar = () => {
   </div>
 </div>
          ):
-        ( <div className="navbar-end gap-2">
-          
-          <Link href="/login" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">
-            Login
-          </Link>
-          <Link href="/register" className="btn bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-xl px-6">
-            Register
-          </Link>
-        </div>)
+        ( <div className="navbar-end gap-1 sm:gap-2 flex flex-col sm:flex-row">
+  <Link
+    href="/login"
+    className="btn btn-sm sm:btn-md bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-lg sm:rounded-xl px-3 sm:px-5 lg:px-6 text-xs sm:text-sm lg:text-base"
+  >
+    Login
+  </Link>
+
+  <Link
+    href="/register"
+    className="btn btn-sm  sm:btn-md bg-[#F4A62A] hover:bg-[#E78B1A] text-white border-none rounded-lg sm:rounded-xl px-3 sm:px-5 lg:px-6 text-xs sm:text-sm lg:text-base"
+  >
+    Register
+  </Link>
+</div>)
         }
        
 
