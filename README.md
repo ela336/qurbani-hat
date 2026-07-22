@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐄 Qurbani Hat
 
-## Getting Started
+Qurbani Hat is a modern and responsive web application built with Next.js that helps users explore and book healthy Qurbani animals from trusted farmers across Bangladesh. The platform provides detailed animal information, secure user authentication, profile management, and a smooth booking experience.
 
-First, run the development server:
+## 🌐 Live Website
+
+https://qurbani-hat-bice.vercel.app/
+
+## 🎯 Project Purpose
+
+The purpose of this project is to provide a simple, user-friendly platform where users can:
+
+- Browse available Qurbani animals
+- View detailed information about each animal
+- Register and log in securely
+- Manage their profile
+- Book an animal through a booking form
+- Learn useful Qurbani tips and information
+
+## ✨ Key Features
+
+- Responsive design for mobile, tablet, and desktop
+- User authentication using Better Auth
+- Email & Google Sign In
+- Featured Animals section
+- All Animals page
+- Animal Details page
+- Booking form with success notification
+- User Profile page
+- Update Profile Information
+- Custom 404 Not Found page
+- Error handling page
+- Beautiful animations using Animate.css
+- Protected routes for authenticated users
+
+## 🛠️ Technologies Used
+
+- Next.js 16
+- React
+- Tailwind CSS
+- DaisyUI
+- Better Auth
+- MongoDB
+- Animate.css
+- React Hook Form
+- React Icons
+- Vercel
+
+## 📦 NPM Packages Used
+
+```bash
+next
+react
+react-dom
+tailwindcss
+daisyui
+better-auth
+mongodb
+react-hook-form
+react-icons
+animate.css
+```
+
+## 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone <your-repository-link>
+```
+
+Navigate to the project folder
+
+```bash
+cd qurbani-hat
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👨‍💻 Author
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed by **Israt Jahan Ela**
