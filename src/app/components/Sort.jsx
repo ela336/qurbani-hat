@@ -96,7 +96,7 @@ if (sortan === "high") {
 
               <div className="card-actions mt-4">
                 <Link
-                  href={`/animals/${animal.id}`}
+                  href={`/All/${animal.id}`}
                   className="btn btn-success w-full"
                 >
                   View Details
