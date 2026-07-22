@@ -39,7 +39,7 @@ const Banner = () => {
 
           <div className="mx-auto">
             <Link href="/All">
-              <button className="btn bg-white text-[#184B2D] text-sm sm:text-xl w-35 sm:w-100 h-13 border border-4 border-[#184B2D]  ml-20 shadow-2xl">
+              <button className="btn bg-white text-[#184B2D] text-sm sm:text-xl w-35 sm:w-100 h-13 border border-4 border-[#184B2D]  ml-20 shadow-2xl animate__animated animate__bounce">
                 All Animals
               </button>
             </Link>

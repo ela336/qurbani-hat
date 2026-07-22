@@ -34,7 +34,7 @@ const Details = async ({ params }) => {
             src={cow.image}
             alt={cow.name}
             fill
-            className="object-cover"
+            className="object-cover animate__animated animate__bounce"
           />
         </div>
 
